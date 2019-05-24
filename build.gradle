@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'idea'
+    id 'com.stehno.natives' version '0.3.1'
+}
+
+group 'com.tyner.games'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // LWJGL/OpenGL Bindings
+    compile group: 'org.lwjgl', name: 'lwjgl', version:'3.2.2'
+    compile group: 'org.lwjgl', name: 'lwjgl-glfw', version:'3.2.2'
+    compile group: 'org.lwjgl', name: 'lwjgl-opengl', version:'3.2.2'
+    compile group: 'org.lwjgl', name: 'lwjgl', version:'3.2.2', classifier:'natives-windows'
+    compile group: 'org.lwjgl', name: 'lwjgl-opengl', version:'3.2.2', classifier:'natives-windows'
+    compile group: 'org.lwjgl', name: 'lwjgl-glfw', version:'3.2.2', classifier:'natives-windows'
+}
